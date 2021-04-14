@@ -12,14 +12,14 @@ int solution(int N) {
     bool bSet = false;
     while(iTemp != 0)
     {
-        int iBinary = iTemp%2;
+        int iBinary = iTemp % 2;
         if (iBinary == 1)
         {
             bSet = true;            
             if (iTemp != 1)
-                {
-                    iSum = 0;
-                } 
+            {
+                iSum = 0;
+            } 
         }
         else
         {
@@ -33,7 +33,7 @@ int solution(int N) {
             }
              
         }
-        iTemp = iTemp/2; 
+        iTemp = iTemp / 2; 
     }
     return iMax;
 }
