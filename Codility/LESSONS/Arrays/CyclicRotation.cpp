@@ -7,7 +7,7 @@
 vector<int> solution(vector<int> &A, int K) {
     // write your code in C++14 (g++ 6.2.0)
     vector<int> B;
-    unsigned int Index = static_cast<unsigned int>(K) % A.size(); // 0 equals K
+    unsigned int iIndex = static_cast<unsigned int>(K) % A.size(); // 0 equals K
     
     // A size -> 0
     if( A.size() == 0U)
@@ -16,16 +16,16 @@ vector<int> solution(vector<int> &A, int K) {
     }
 
     // A all Index -> 0
-    if (Index == 0U)
+    if (iIndex == 0U)
     {
         return A;
     }
 
-    for(unsigned int i = A.size()-Index; i < A.size(); i++)
+    for(unsigned int i = A.size()-iIndex; i < A.size(); i++)
     {
         B.push_back(A[i]);
     }
-    for(unsigned int j = 0U; j < A.size()-Index; j++)
+    for(unsigned int j = 0U; j < A.size()-iIndex; j++)
     {
         B.push_back(A[j]);
     }
