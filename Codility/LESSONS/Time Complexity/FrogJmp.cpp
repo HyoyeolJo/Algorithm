@@ -9,10 +9,10 @@ int solution(int X, int Y, int D) {
     //X + nD <= Y
     //n <= (Y-X) / D;
     int iRet = 1;
-    if( X <= Y)
+    if (X <= Y)
     {
-        iRet = (Y-X)/ D;
-        if((Y-X)% D != 0)
+        iRet = (Y-X) / D;
+        if (((Y-X) % D) != 0)
             iRet++;
     }
     return iRet;
