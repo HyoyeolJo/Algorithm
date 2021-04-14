@@ -13,7 +13,7 @@ int solution(vector<int> &A) {
     }
     else if (A.size() == 1U)
     {
-        if( A[0] == 1)
+        if (A[0] == 1)
         {
             iRet = 2;
         }
@@ -26,9 +26,9 @@ int solution(vector<int> &A) {
     {
         sort(A.begin(),A.end());
         bool bConnect = true;
-        for(unsigned int i = 0U; i<A.size();i++)
+        for (unsigned int i = 0U; i < A.size();i++)
         {
-            if((A[i] - i) == 2)
+            if ((A[i] - i) == 2)
             {
                 bConnect = false;
                 iRet = i+1;
