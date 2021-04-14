@@ -36,7 +36,7 @@ int solution(vector<int> &A) {
             }
         }
         if (bConnect == true)
-            iRet = A.size()+1;
+            iRet = A.size() + 1;
     }
     return iRet;
 }
