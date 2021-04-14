@@ -10,7 +10,7 @@ vector<int> solution(vector<int> &A, int K) {
     unsigned int iIndex = static_cast<unsigned int>(K) % A.size(); // 0 equals K
     
     // A size -> 0
-    if( A.size() == 0U)
+    if (A.size() == 0U)
     {
         return A;
     }
@@ -20,12 +20,13 @@ vector<int> solution(vector<int> &A, int K) {
     {
         return A;
     }
-
-    for(unsigned int i = A.size()-iIndex; i < A.size(); i++)
+    
+    unsigned int nBound = A.size() - iIndex;
+    for (unsigned int i = nBound; i < A.size(); i++)
     {
         B.push_back(A[i]);
     }
-    for(unsigned int j = 0U; j < A.size()-iIndex; j++)
+    for (unsigned int j = 0U; j < nBound; j++)
     {
         B.push_back(A[j]);
     }
