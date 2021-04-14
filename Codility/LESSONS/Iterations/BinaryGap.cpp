@@ -6,34 +6,34 @@
 
 int solution(int N) {
     // write your code in C++14 (g++ 6.2.0)
-    int Temp = N;
-    int Sum = 0;
-    int Max = 0;
-    bool Set = false;
-    while(Temp != 0)
+    int iTemp = N;
+    int iSum = 0;
+    int iMax = 0;
+    bool bSet = false;
+    while(iTemp != 0)
     {
-        int Binary = Temp%2;
-        if (Binary == 1)
+        int iBinary = iTemp%2;
+        if (iBinary == 1)
         {
-            Set = true;            
-            if (Temp != 1)
+            bSet = true;            
+            if (iTemp != 1)
                 {
-                    Sum = 0;
+                    iSum = 0;
                 } 
         }
         else
         {
-            if( Set == true)
+            if (iSet == true)
             {
-                Sum++;
-                if (Max < Sum)
+                iSum++;
+                if (iMax < iSum)
                 {
-                   Max = Sum;
+                   iMax = iSum;
                 }
             }
              
         }
-        Temp = Temp/2; 
+        iTemp = iTemp/2; 
     }
-    return Max;
+    return iMax;
 }
