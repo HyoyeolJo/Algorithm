@@ -3,4 +3,4 @@
 1) Codility
 https://app.codility.com/programmers/
 
-- Segment Tree(https://www.crocus.co.kr/648)
+- Segment Tree(https://www.crocus.co.kr/648) : GenomicRangeQuery
