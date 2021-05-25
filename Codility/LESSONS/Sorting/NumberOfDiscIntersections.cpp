@@ -1,19 +1,5 @@
-
-/*
-0, 1
-0, 2
-0, 4
-1, 2
-1, 3
-1, 4
-1, 5
-2, 3
-2, 4
-3, 4
-4, 5
-*/
 // you can use includes, for example:
-// #include <algorithm>
+#include <algorithm>
 
 // you can write to stdout for debugging purposes, e.g.
 // cout << "this is a debug message" << endl;
@@ -22,40 +8,35 @@ int solution(vector<int> &A) {
     // write your code in C++14 (g++ 6.2.0)
     int count = 0;
     int size = static_cast<int>(A.size());
+    vector<float>lower;
+    vector<float>upper;
     for (int i = 0U; i< size; i++)
     {
         float low = i-static_cast<float>(A[i]);
         float high = i+static_cast<float>(A[i]);
-        for(int j = i+1 ; j < size; j++)
+        lower.push_back(low);
+        upper.push_back(high);
+    }
+    sort(lower.begin(),lower.end());
+    sort(upper.begin(),upper.end());
+    int j = 0;
+    for (int i = 0U; i< size; i++)
+    {
+        for(; j < size; j++)
         {
-            float sublow = j-static_cast<float>(A[j]);
-            float subhigh = j+static_cast<float>(A[j]);
-
-            if((high >= sublow) && (subhigh >= low))
+            if(lower[j] <= upper[i])
             {
-                count++;
-                if( count > 10000000)
-                {
-                    return -1;
-                }
+                count += j;
+                count -= i;
+            }
+            else {
+                break;
             }
         }
     }
+    if( count > 10000000)
+    {
+        count = -1;
+    }
     return count;
 }
-
-// 아래 방법으로 찾을 수 있도록 처리가 필요
-/*
-1, 0 
-1, 4
-1, 2
-1, 3
-1, 5
-4, 0
-4, 2
-4, 3
-4, 5 
-2, 0
-2, 3
-*/
-
