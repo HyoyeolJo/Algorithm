@@ -22,9 +22,9 @@ int solution(vector<int> &A) {
     int j = 0;
     for (int i = 0U; i< size; i++)
     {
-        for(; j < size; j++)
+        for (; j < size; j++)
         {
-            if(lower[j] <= upper[i])
+            if (lower[j] <= upper[i])
             {
                 count += j;
                 count -= i;
@@ -34,7 +34,7 @@ int solution(vector<int> &A) {
             }
         }
     }
-    if( count > 10000000)
+    if (count > 10000000)
     {
         count = -1;
     }
