@@ -32,11 +32,15 @@ int solution(int N, int number) {
                             func[answer].insert(ea+eb);
                             // 음수로 계속 더해지는 건 의미가 없음
                             if ((ea-eb) > 0)
+                            {
                                 func[answer].insert(ea-eb);
+                            }
                             func[answer].insert(ea*eb);
                             // 0으로 나누면 안됨
                             if(eb > 0)
+                            {
                                 func[answer].insert(ea/eb);
+                            }
                         }
                     }
                 }
@@ -44,9 +48,13 @@ int solution(int N, int number) {
         }
         //연산된 값이 number인 set을 찾으면 반복문 종료
         if(func[answer].find(number) != func[answer].end())
+        {
             break;
+        }
     }
     if(answer == 9)
+    {
         answer = -1;
+    }
     return answer;
 }
