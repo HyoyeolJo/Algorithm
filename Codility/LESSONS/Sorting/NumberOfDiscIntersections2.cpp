@@ -31,10 +31,9 @@ int solution(vector<int> &A) {
                 count+=j;
                 count-=i;
             }
-            else {
+            else
             {
                 break;
-            }
             }
         }
     }
