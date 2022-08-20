@@ -8,17 +8,17 @@ using namespace std;
 int globalcnt;
 void dfs(int N, int i,int j, vector<vector<int>>block, vector<vector<bool>>&check)
 {
-	if(i < 0 || j < 0) return;
+    if(i < 0 || j < 0) return;
     if(i >= N || j >= N) return;
     if(block[i][j] ==0) return;
     if(check[i][j] == true) return;
     else check[i][j] = true;
     int di[4]={1, -1, 0, 0};
-	int dj[4]={0, 0, 1, -1};
-	globalcnt++;
+    int dj[4]={0, 0, 1, -1};
+    globalcnt++;
     for(int index=0; index<4; index++)
     {   
-		int ni=i+di[index];
+	int ni=i+di[index];
         int nj=j+dj[index];
         dfs(N, ni, nj, block, check);
     }
